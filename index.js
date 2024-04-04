@@ -80,6 +80,8 @@ console.log(user.active);
 console.log(user.sendMail);
 console.log(user.sendMail());
 */
+
+/*
 const user = {
     //Pares CLAVE-VALOR son PROPERTIES
     name: 'ryan',
@@ -107,7 +109,31 @@ console.log(user.friends);
 console.log(user.active);
 console.log(user.sendMail);
 console.log(user.sendMail());
+*/
 
+/////////////////////////////////////////////////////
+//Shorthand property names
+/*
+const name = 'laptop';
+const price = 3000;
+
+const newProduct = {
+    name: name,
+    price: price
+}
+
+console.log(newProduct);
+*/
+
+const name = 'laptop';
+const price = 3000;
+
+const newProduct = {
+    name,
+    price
+}
+
+console.log(newProduct);
 
 
 
