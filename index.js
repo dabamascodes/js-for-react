@@ -137,6 +137,7 @@ console.log(newProduct);
 */
 /////////////////////////////////////////////////////
 //Manipulacion del DOM (se esta manipulando el documento)
+/*
 const title = document.createElement('h1');
 title.innerText = 'Hola mundo desde JS';
 
@@ -155,6 +156,22 @@ document.body.append(button);
 // A partir de aqui podriamos crear nuestras propias bibliotecas o funcionalidades
 // Pero si ya estamos reutilizando todas estas bibliotecas o funcionalidades:
 // Estariamos creando nuestro propio Framework: React, Angular, ETC.
+*/
+
+/////////////////////////////////////////////////////
+//Objetos como parametros
+const user = {
+    name: 'joe',
+    age: 30
+}
+
+function printInfo(user) {
+    return '<h1>Hola ' + user.name + '</h1>';
+}
+
+console.log(printInfo(user));
+document.body.innerHTML = printInfo(user);
+//document.body.innerHTML = '<h2>Texto anadido</h2>';
 
 
 
