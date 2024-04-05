@@ -160,6 +160,7 @@ document.body.append(button);
 
 /////////////////////////////////////////////////////
 //Objetos como parametros
+/*
 const user = {
     name: 'joe',
     age: 30
@@ -172,6 +173,73 @@ function printInfo(user) {
 console.log(printInfo(user));
 document.body.innerHTML = printInfo(user);
 //document.body.innerHTML = '<h2>Texto anadido</h2>';
+*/
+/////////////////////////////////////////////////////
+//Destructuring
+/*
+const user = {
+    name: 'joe',
+    age: 30
+}
+
+function printInfo(user) {
+    return '<h1>Hola ' + user['age'] + '</h1>';
+}
+
+console.log(printInfo(user));
+document.body.innerHTML = printInfo(user);
+*/
+
+/*
+// Aplicando Destructuring --> name
+const user = {
+    name: 'joe',
+    age: 30
+}
+
+function printInfo({ name }) {
+    return '<h1>Hola ' + name + '</h1>';
+}
+
+console.log(printInfo(user));
+document.body.innerHTML = printInfo(user);
+*/
+
+/*
+// Aplicando Destructuring --> age
+const user = {
+    name: 'joe',
+    age: 30
+}
+
+function printInfo({ age }) {
+    return '<h1>Hola ' + age + '</h1>';
+}
+
+console.log(printInfo(user));
+document.body.innerHTML = printInfo(user);
+*/
+
+// Aplicando Destructuring de otra forma
+const user = {
+    name: 'joe',
+    age: 30
+}
+
+function printInfo(user) {
+    const { name, age } = user; 
+    console.log(name, age);
+    return '<h1>Hola ' + name + " | " + age + '</h1>';
+}
+
+console.log(printInfo(user));
+document.body.innerHTML = printInfo(user);
+
+
+
+
+
+
 
 
 
