@@ -124,7 +124,7 @@ const newProduct = {
 
 console.log(newProduct);
 */
-
+/*
 const name = 'laptop';
 const price = 3000;
 
@@ -134,7 +134,27 @@ const newProduct = {
 }
 
 console.log(newProduct);
+*/
+/////////////////////////////////////////////////////
+//Manipulacion del DOM (se esta manipulando el documento)
+const title = document.createElement('h1');
+title.innerText = 'Hola mundo desde JS';
 
+const button = document.createElement('button');
+button.innerText = 'click';
+//Escucha --> EVENT HANDLERS
+button.addEventListener('click', function () {
+    //console.log('Hola mundo!');
+    title.innerText = 'Texto actualizado con JS';
+    alert('Se realizo un click');
+});
+
+document.body.append(title);
+document.body.append(button);
+// Todo esto se conoce como Manipulacion de DOM (se esta manipulando el documento)
+// A partir de aqui podriamos crear nuestras propias bibliotecas o funcionalidades
+// Pero si ya estamos reutilizando todas estas bibliotecas o funcionalidades:
+// Estariamos creando nuestro propio Framework: React, Angular, ETC.
 
 
 
