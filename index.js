@@ -285,7 +285,7 @@ function add(x,y) {
     return x + y;
 };
 */
-
+/*
 // arrow function
 const add = (x,y) => {
     return x + y;
@@ -301,6 +301,36 @@ button.addEventListener('click', () => {
 });
 
 document.body.append(button);
+*/
+
+
+/////////////////////////////////////////////////////
+//Inline arrow functions
+
+/*
+const showText = () => {
+    return 'Hola mundo';
+};
+
+console.log(showText());
+*/
+
+// Si no colocamos llaves {}, implicitamente es un RETURN
+const showText = () => 'Hola mundo';
+const showNumber = () => 22;
+const showBoolean = () => true;
+const showArray = () => [1,2,3];
+// Para retornar un objeto --> tenemos que envolver el objeto dentro de parentesis
+// porque JS, lo interpretaria como las llaves de la fn
+const showObject = () => ({name:'ryan'});
+
+
+console.log(showText());
+console.log(showNumber());
+console.log(showBoolean());
+console.log(showArray());
+console.log(showObject());
+
 
 
 
