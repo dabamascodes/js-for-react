@@ -266,10 +266,37 @@ console.log(function () {
 */
 
 //Ejemplo aplicado al DOM
+/*
 const button = document.createElement('button');
 button.innerText = 'click me';
 
 button.addEventListener('click', function () {
+    alert('clicked');
+});
+
+document.body.append(button);
+*/
+/////////////////////////////////////////////////////
+// Arrow Function
+
+// fn normal
+/*
+function add(x,y) {
+    return x + y;
+};
+*/
+
+// arrow function
+const add = (x,y) => {
+    return x + y;
+};
+
+
+//Ejemplo aplicado al DOM
+const button = document.createElement('button');
+button.innerText = 'click me';
+
+button.addEventListener('click', () => {
     alert('clicked');
 });
 
