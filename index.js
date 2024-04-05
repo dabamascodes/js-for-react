@@ -314,7 +314,7 @@ const showText = () => {
 
 console.log(showText());
 */
-
+/*
 // Si no colocamos llaves {}, implicitamente es un RETURN
 const showText = () => 'Hola mundo';
 const showNumber = () => 22;
@@ -330,8 +330,26 @@ console.log(showNumber());
 console.log(showBoolean());
 console.log(showArray());
 console.log(showObject());
+*/
 
+/////////////////////////////////////////////////////
+// Otra funcionalidad del return
+// Detener la ejecucion del Codigo hasta donde aparece
+//Ejemplo aplicado al DOM
 
+const button = document.createElement('button');
+button.innerText = 'click me';
+
+const isAuthorized = true;
+
+button.addEventListener('click', function () {
+    if (isAuthorized) {
+        return alert('esta autorizado');
+    }
+    alert("no esta autorizado");
+});
+
+document.body.append(button);
 
 
 
