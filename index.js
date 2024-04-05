@@ -360,6 +360,7 @@ interpretar valores
 */
 
 //Ejemplo aplicado al DOM
+/*
 const background = 'red';
 const color = 'white';
 const isAuthorized = true;
@@ -378,3 +379,57 @@ button.addEventListener('click', function () {
 });
 
 document.body.append(button);
+*/
+
+/////////////////////////////////////////////////////
+// Metodos de Arrays
+
+const names = ['ryan', 'joe', 'maria'];
+const newNamess = ['marcos', 'mario', 'john'];
+//-------------------------------------------------
+// for (let i = 0; i < names.length; i++) {
+//     const element = names[i];
+//     console.log(element);
+// };
+//-------------------------------------------------
+// FOREACH
+// names.forEach(function (name) {
+//     console.log(name);
+// });
+//-------------------------------------------------
+// MAP
+// names.map(function (name) {
+//     console.log(name);
+// });
+
+// const newNames = names.map(function (name) {
+//     return name;
+// });
+// console.log(newNames);
+
+// const newNames = names.map(function (name) {
+//     return `Hola ${name}`;
+// });
+// console.log(names);
+// console.log(newNames);
+//-------------------------------------------------
+// Find
+// const nameFound = names.find(function (name) {
+//     if (name === 'joe') {
+//         return name;
+//     }
+// });
+// console.log(nameFound);
+//-------------------------------------------------
+// Filter: Devuelve un arreglo
+// const nameFiltered = names.filter(function (name) {
+//     if (name !== 'joe') {
+//         return name;
+//     }
+// });
+// console.log(nameFiltered);
+//-------------------------------------------------
+// Concat
+console.log(names);
+console.log(newNamess);
+console.log(names.concat(newNamess));
