@@ -221,6 +221,7 @@ document.body.innerHTML = printInfo(user);
 */
 
 // Aplicando Destructuring de otra forma
+/*
 const user = {
     name: 'joe',
     age: 30
@@ -234,7 +235,45 @@ function printInfo(user) {
 
 console.log(printInfo(user));
 document.body.innerHTML = printInfo(user);
+*/
+/////////////////////////////////////////////////////
+//Funciones an'onimas
+/*
+function start () {
+    return 'Starting...';
+}
 
+console.log(start());
+*/
+
+//En JS las funciones no necesariamente deben tener nombre
+// ponemos la funcion dentro del console log
+// y al final agregamos parentesis, 
+// de esta forma, estamos definiendo e invocando
+// a la funci'on.
+/*
+console.log(function start () {
+    return 'Starting...';
+}());
+*/
+
+//Pero si estamos utilizando la funci'on directamente,
+//podemos quitarle el nombre, lo que la vuelve una fn anonima
+/*
+console.log(function () {
+    return 'Starting...';
+}());
+*/
+
+//Ejemplo aplicado al DOM
+const button = document.createElement('button');
+button.innerText = 'click me';
+
+button.addEventListener('click', function () {
+    alert('clicked');
+});
+
+document.body.append(button);
 
 
 
