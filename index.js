@@ -336,7 +336,7 @@ console.log(showObject());
 // Otra funcionalidad del return
 // Detener la ejecucion del Codigo hasta donde aparece
 //Ejemplo aplicado al DOM
-
+/*
 const button = document.createElement('button');
 button.innerText = 'click me';
 
@@ -350,18 +350,31 @@ button.addEventListener('click', function () {
 });
 
 document.body.append(button);
+*/
+
+/////////////////////////////////////////////////////
+// Strings literals
+/*
+Nos permiten concatenar o unir strings y nos permiten
+interpretar valores
+*/
+
+//Ejemplo aplicado al DOM
+const background = 'red';
+const color = 'white';
+const isAuthorized = true;
+
+const button = document.createElement('button');
+button.innerText = 'click me';
+button.style = 'background: #202020 ; color: white;';
+button.style = `background: ${isAuthorized ? 'green' : background} ; color: ${color};`;
 
 
+button.addEventListener('click', function () {
+    if (isAuthorized) {
+        return alert('esta autorizado');
+    }
+    alert("no esta autorizado");
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
+document.body.append(button);
