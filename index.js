@@ -466,6 +466,7 @@ console.log(userInfo);
 
 /////////////////////////////////////////////////////
 // Ecmascript modules
+/*
 import { add, multiply, active, points, title } from './add.js';
 
 console.log(active, points, title);
@@ -477,3 +478,17 @@ console.log(addModule());
 
 // En React u otros Frameworks no se usa la extension JS
 // Es solo s'intaxis, ya que no siguen el Std de JS
+*/
+
+/////////////////////////////////////////////////////
+// Optional Chaining
+
+const person = {
+    name: 'ryan',
+    address: {
+        city: 'london'
+    },
+    location: {}
+};
+
+console.log(person.location?.city);
