@@ -384,8 +384,8 @@ document.body.append(button);
 /////////////////////////////////////////////////////
 // Metodos de Arrays
 
-const names = ['ryan', 'joe', 'maria'];
-const newNamess = ['marcos', 'mario', 'john'];
+// const names = ['ryan', 'joe', 'maria'];
+// const newNamess = ['marcos', 'mario', 'john'];
 //-------------------------------------------------
 // for (let i = 0; i < names.length; i++) {
 //     const element = names[i];
@@ -430,6 +430,35 @@ const newNamess = ['marcos', 'mario', 'john'];
 // console.log(nameFiltered);
 //-------------------------------------------------
 // Concat
+// console.log(names);
+// console.log(newNamess);
+// console.log(names.concat(newNamess));
+
+/////////////////////////////////////////////////////
+// Spread operator
+
+const names = ['ryan', 'joe', 'maria'];
+const newNames = ['marcos', 'mario', 'john'];
+
 console.log(names);
-console.log(newNamess);
-console.log(names.concat(newNamess));
+console.log(newNames);
+console.log([...names, ...newNames]);
+
+const user = {
+    name: "ryan",
+    lastname: "ray"
+};
+
+const address = {
+    street: 'main street 123',
+    city: 'bogota'
+};
+
+const userInfo = {
+    ...user,
+    ...address
+};
+
+console.log(user);
+console.log(address);
+console.log(userInfo);
