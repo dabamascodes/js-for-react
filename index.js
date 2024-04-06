@@ -436,7 +436,7 @@ document.body.append(button);
 
 /////////////////////////////////////////////////////
 // Spread operator
-
+/*
 const names = ['ryan', 'joe', 'maria'];
 const newNames = ['marcos', 'mario', 'john'];
 
@@ -462,3 +462,18 @@ const userInfo = {
 console.log(user);
 console.log(address);
 console.log(userInfo);
+*/
+
+/////////////////////////////////////////////////////
+// Ecmascript modules
+import { add, multiply, active, points, title } from './add.js';
+
+console.log(active, points, title);
+console.log(add(10, 20));
+console.log(multiply(10, 20));
+
+import addModule from "./add.js";
+console.log(addModule());
+
+// En React u otros Frameworks no se usa la extension JS
+// Es solo s'intaxis, ya que no siguen el Std de JS
