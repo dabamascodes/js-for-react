@@ -482,7 +482,7 @@ console.log(addModule());
 
 /////////////////////////////////////////////////////
 // Optional Chaining
-
+/*
 const person = {
     name: 'ryan',
     address: {
@@ -492,3 +492,73 @@ const person = {
 };
 
 console.log(person.location?.city);
+*/
+
+/////////////////////////////////////////////////////
+// Async Await
+
+// Devuelve una Promesa
+// let data = fetch('https://jsonplaceholder.typicode.com/posts');
+// console.log(data);
+
+// Con esto podemos observar que se pueden ejecutar 
+// otras funciones de manera Asincrona, mientras esperamos
+// nuestra promesa.
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(function () {
+//         console.log('finalizo la carga');
+//     });
+// console.log('linea 2');
+
+// Viendo la Respuesta
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(function (response) {
+//         console.log(response);
+//     });
+// console.log('linea 2');
+
+// Conviritiendo la Respuesta a JSON
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(function (response) {
+//         // API del navegador y su respuesta ser'a asincrona
+//         // por la tanto tenemos que usar otro THEN,
+//         // El THEN podemos utilizarlo siempre que pensemos
+//         // que una respuesta tomara tiempo.
+//         return response.json();
+//     }).then(function (data) {
+//         console.log(data);
+//     });
+// console.log('linea 2');
+
+
+// Mostrando el JSON
+// const ul = document.createElement("ul");
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(function (response) {
+//         return response.json();
+//     }).then(function (data) {
+//         console.log(data);
+//         data.forEach(function (post) {
+//             const li = document.createElement("li");
+//             li.innerText = post.title;
+//             ul.append(li);
+//         });
+//         document.body.append(ul);
+//     });
+// console.log('linea 2');
+
+// JS moderno --> palabra AWAIT with ASYNC
+const ul = document.createElement("ul");
+async function loadData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await response.json();
+    console.log(data);
+    data.forEach(function (post) {
+        const li = document.createElement("li");
+        li.innerText = post.title;
+        ul.append(li);
+    });
+    document.body.append(ul);
+};
+loadData();
+console.log('linea 2');
