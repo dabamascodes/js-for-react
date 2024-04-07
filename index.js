@@ -1,3 +1,8 @@
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Javascript para Aprender React
+// https://www.youtube.com/watch?v=lVqHiTCIRQg
+/////////////////////////////////////////////////////////////////////////////////////
 /*
 function hello(){
     
@@ -562,3 +567,351 @@ async function loadData() {
 };
 loadData();
 console.log('linea 2');
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Javascript Arrays - Metodos (map, filter, reduce, sort, etc.)
+// https://www.youtube.com/watch?v=qqR1enOceVg
+/////////////////////////////////////////////////////////////////////////////////////
+
+// sample array of students
+
+const students = [
+    {
+      name: "Jill",
+      lastname: "Doe",
+      age: 23,
+      course: "Marketing",
+    },
+    {
+      name: "John",
+      lastname: "Doe",
+      age: 20,
+      course: "Web Development",
+    },
+    {
+      name: "Jack",
+      lastname: "Doe",
+      age: 22,
+      course: "Accounting",
+    },
+    {
+      name: "Ryan",
+      lastname: "Ray",
+      age: 20,
+      course: "Web Development",
+    },
+    {
+      name: "Jane",
+      lastname: "Doe",
+      age: 21,
+      course: "Financial Management",
+    },
+  ];
+  
+  // Write your code here!
+  /////////////////////////////////////////////////////////////////////////////////////
+  // ForEach
+  /////////////////////////////////////////////////////////////////////////////////////
+  
+  // for(let i = 0; i < students.length; i++) {
+  //   console.log(students[i])
+  // }
+  
+  // Se le llama callback a una function que esta dentro de otra function
+  // students.forEach(function (student, index, students) {
+  //   console.log(student)
+  //   console.log(index)
+  //   console.log(students)
+  // })
+  
+  
+  // const fullnames = [];
+  
+  // students.forEach((student) => {
+  //   // ForEach no devuelve valor, por eso usamos el .push
+  //   fullnames.push(student.name + " " + student.lastname);
+  // });
+  
+  // console.log(fullnames);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Map
+  /////////////////////////////////////////////////////////////////////////////////////
+  // El método map al igual que el ForEach recorre un arreglo,
+  //   pero este sí retorna un nuevo arreglo con los elementos transformados.
+  
+  
+  // const studentNames = students.map(function (student) {
+  //   return {
+  //     fullname: `${student.name} ${student.lastname}`,
+  //   }
+  // })
+  // console.log(studentNames);
+  
+  // const studentCourses =  students.map(function (student) {
+  //   return {
+  //     course: "Programming"
+  //   }
+  // })
+  // console.log(studentCourses);
+  
+  // const studentNames = students.map((student) => {
+  //   return {
+  //     fullname: `${student.name} ${student.lastname}`,
+  //     age: student.age,
+  //     course: student.course,
+  //     title: `${student.name} - ${student.course}`
+  //   };
+  // });
+  // console.log(studentNames);
+  
+  // const studentNames = students.map(student => {
+  //   return {
+  //     ...student,
+  //     title: `${student.name} - ${student.course}`
+  //   };
+  // });
+  // console.log(studentNames);
+  
+  // const studentNames = students.map(student => {
+  //   return {
+  //     ...student,
+  //     course: 'Programming'
+  //   };
+  // });
+  // console.log(studentNames);
+  // Podemos constatar que el objeto original No se modifica
+  // console.log(students);
+  
+  // Si invertimos los datos, se mantienen los cursos
+  // Siempre debemos primero copiar y después cambiar
+  // const studentNames = students.map(student => {
+  //   return {
+  //     course: 'Programming',
+  //     ...student
+  //   };
+  // });
+  // console.log(studentNames);
+  
+  // Podemos eliminar el Return...
+  // const studentNames = students.map(student => ({
+  //   ...student,
+  //   course: 'Programming'
+  // }));
+  // console.log(students);
+  // console.log(studentNames);
+  
+  
+  // const doubleAges = students.map((student) => student.age).map((age) => age * 2);
+  // console.log(doubleAges);
+  
+  // const studentsInfo = students.map((student) =>  {
+  //   return {
+  //     fullname: `${student.name} ${student.lastname}`,
+  //     age: student.age
+  //   };
+  // });
+  // const texts = studentsInfo.map((student) =>  {
+  //   return `${studentsInfo.fullname} is ${student.age} years old`;
+  // })
+  // console.log(texts);
+  
+  // const texts = students
+  //   .map((student) => ({
+  //     fullName: `${student.name} ${student.lastname}`,
+  //     age: student.age,
+  //   }))
+  //   .map((student) => `${student.fullName} is ${student.age} years old`);
+  // console.log(texts);
+  
+  // const fullnames = students.map(function (student) {
+  //     return student.name + ' ' + student.lastname;
+  // })
+  // console.log(fullnames);
+  
+  // const doubleage = students
+  //   .map((student) => ({
+  //     ...student,
+  //     course: "Programming",
+  //   }))
+  //   .map((student) => ({ ...student, age: student.age * 2 }));
+  // console.log(doubleage);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Filter
+  /////////////////////////////////////////////////////////////////////////////////////
+  // const developers = [];
+  
+  // for (let i = 0; i < students.length; i++) {
+  //   if (students[i].course === 'Web Development') {
+  //     developers.push(students[i]);
+  //   }
+  // };
+  // console.log(developers);
+  
+  // const result = students.filter(function (student) {
+  //   if (student.course === 'Web Development') {
+  //     return true
+  //   }
+  // })
+  // console.log(result);
+  
+  // const result = students.filter(student => student.course === 'Web Development');
+  // console.log(result);
+  
+  // const result = students.filter((student) => student.age > 21);
+  // console.log(result);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Reduce
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Toma valores de un objeto y las reduce a un valor
+  
+  // let total = 0;
+  // for (let i = 0; i < points.length; i++) {
+  //   total += points[i];
+  // }
+  
+  // const total = points.reduce((total, point) => {
+  //   return total + point;
+  // }, 0);
+  
+  //--------------------------  ACC - ITEM ------------------- INITIAL VALUE DEL ACC                         
+  // const total = points.reduce((total, point) => total + point, 0);
+  // console.log(total);
+  
+  // const totalAges = students.reduce((total, student) => total + student.age, 0);
+  // console.log(totalAges);
+  
+  // const developers = [
+  //   {
+  //     id: 1,
+  //     name: "John",
+  //     skills: ["HTML", "React", "Javascript", "Java"],
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Jane",
+  //     skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "NodeJS"],
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Jack",
+  //     skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "NodeJS"],
+  //   },
+  // ];
+  
+  // const result = developers.reduce(function (allSkills, student) {
+  //   return Array.from(new Set([...allSkills, ...student.skills]));
+  // }, []);
+  // console.log(result);
+  
+  // let total = 0;
+  // for (let i = 0; i < students.length; i++) {
+  //   total += students[i].age;
+  // };
+  // console.log(total);
+  
+  // const result = students.reduce((total, student) => total + student.age, 0);
+  // console.log(result);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Sort
+  /////////////////////////////////////////////////////////////////////////////////////
+  // const sortedStudents = students.sort(function (first, second) {
+  //   if (first.age > second.age) {
+  //     return 1;
+  //   } else {
+  //     return -1;
+  //   }
+  // });
+  // console.log(sortedStudents);
+  
+  // const sortedStudents = students.sort((a, b) => a.age > b.age ? 1 : -1);
+  // console.log(sortedStudents);
+  
+  // const sortedStudents = students.sort((a, b) => a.age - b.age);
+  // console.log(sortedStudents);
+  
+  // const points = [ 100, 20, 30, 44, 55, 70, 90, 10, 30, 45, 60, 80, 100, 100,];
+  // const sortedPoints = points.sort();
+  // console.log(sortedPoints);
+  
+  // const sortedPoints = points.sort((a, b) => a > b ? 1 : -1);
+  // console.log(sortedPoints);
+  
+  // const sortedPoints = points.sort((a, b) => a - b);
+  // console.log(sortedPoints);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Find
+  /////////////////////////////////////////////////////////////////////////////////////
+  // const result = students.find((student) => student.name === "Ryan");
+  // console.log(result);
+  
+  // const result = students.find((student) => student.age === 20);
+  // console.log(result);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Some
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Retorna un valor booleano verdadero sí al menos algún elemento cumple cierta condición.
+  
+  // const result = students.some((student) => student.lastname === "Doe");
+  // console.log(result);
+  
+  // const result = students.some((student) => student.age > 22);
+  // console.log(result);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Every
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Retorna un valor booleano verdadero sí TODOS los elementos 
+  // cumplen con la condición establecida.
+  
+  // const result = students.every((student) => student.name.includes("J"));
+  // console.log(result);
+  
+  // const result = students.every((student) => student.age >= 20);
+  // console.log(result);
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // Combinados
+  /////////////////////////////////////////////////////////////////////////////////////
+  
+  // const result = students
+  //   .map(({ name, lastname, age }) => ({
+  //     student: `${name} ${lastname}`,
+  //     age,
+  //   }));
+  // console.log(result);
+  
+  // const result = students
+  //   .map(({ name, lastname, age }) => ({
+  //     student: `${name} ${lastname}`,
+  //     age,
+  //   }))
+  //   .filter((student) => student.age > 20);
+  // console.log(result);
+  
+  // const result = students
+  //   .map(({ name, lastname, age }) => ({
+  //     student: `${name} ${lastname}`,
+  //     age,
+  //   }))
+  //   .filter((student) => student.age > 20)
+  //   .sort((a, b) => a.age - b.age);
+  // console.log(result);
+  
+  const result = students
+    .map(({ name, lastname, age }) => ({
+      student: `${name} ${lastname}`,
+      age,
+    }))
+    .filter((student) => student.age > 20)
+    .sort((a, b) => b.age - a.age)
+    .reduce((total, student) => total + student.age, 0);
+  console.log(result);
